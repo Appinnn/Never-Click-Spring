@@ -19,6 +19,16 @@ public class CafeService
 		this.cafeDao = cafeDao;
 	}
 	
+	public CafeDto getCoffe(int id)
+	{
+		return cafeDao.findId(id);
+	}
+	
+	public void remove(int id)
+	{
+		cafeDao.delete(id);
+	}
+	
 	public List<CafeDto> printAll()
 	{
 		return cafeDao.print();

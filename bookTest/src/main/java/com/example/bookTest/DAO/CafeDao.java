@@ -31,6 +31,15 @@ public class CafeDao
 		return list;
 	}
 	
+	public CafeDto findId(int id)
+	{
+		String sql = "select * from coffe where coffe_id=?";
+		
+		 CafeDto data = jt.queryForObject(sql, new cafeDtoRowMapper(), id);
+		 
+		 return data;
+	}
+	
 	public void insert(CafeDto cafeDto)
 	{
 		String sql = "insert into coffe(item_name, price, decaffein) values(?,?,?)";
@@ -38,6 +47,13 @@ public class CafeDao
 		jt.update(sql, cafeDto.getItemName(),
 				cafeDto.getPrice(),
 				cafeDto.getDecaffein());
+	}
+	
+	public void delete(int id)
+	{
+		String sql = "delete from coffe where coffe_id=?";
+		
+		jt.update(sql, id);
 	}
 	
 	public class cafeDtoRowMapper implements RowMapper<CafeDto>

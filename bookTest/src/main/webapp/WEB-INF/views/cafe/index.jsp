@@ -19,15 +19,13 @@
 		
 		<div id="bookListWrap">
 			<ul id="bookList">
-			<li class="blist">
-				<span>커피 이름</span>
-				<span>가격</span>
-				<span>카페인 유,무</span>
-			</li>
+			
 			
 			<c:forEach var="row" items="${list }">
 				<li class="blist">
-					<span class="itemName">${row.itemName }</span>
+					<span class="itemName">
+						<a href="/cafe/view?id=${row.coffeId}">${row.itemName }</a>
+					</span>
 					<span class="price">${row.price }원</span>
 					<span class="decaffein">${row.decaffein== 1 ? '카페인 O' : '카페인 X' }</span>
 				</li>

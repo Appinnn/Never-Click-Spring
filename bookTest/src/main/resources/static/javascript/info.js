@@ -29,8 +29,16 @@ $(function() // window.onload
 					text = text.replace(/[^0-9]/g,""); // 천단위 콤마 표시 제거
 				}
 			
-			$(v).html("<input type='"+inputType[i]+"' name='"+inputName[i]+"' value='"+text+"'> ")
-		}); 
+			
+				
+				$(v).html("<input type='"+inputType[i]+"' name='"+inputName[i]+"' value='"+text+"'> ")
+			if(inputName[i] === "decaffein")
+				{
+					$input = '<input type="radio" name="decaffein" value="0" checked>카페인'+
+					'<input type="radio" name="decaffein" value="1"디카페인';
+				}
+				
+			}); 
 		
 		// 클래스명이 value인 td 내부 설정
 		

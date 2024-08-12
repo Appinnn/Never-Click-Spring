@@ -41,4 +41,11 @@ public class CafeService
 			cafeDao.insert(cafeDto);
 		}
 	}
+
+	public void update(CafeDto coffeDto) {
+		cafeDao.update(coffeDto);
+		
+	}
+	
+	
 }

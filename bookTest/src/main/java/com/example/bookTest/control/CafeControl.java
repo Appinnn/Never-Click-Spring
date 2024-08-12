@@ -61,6 +61,16 @@ public class CafeControl
 		return "redirect:/coffe";
 	}
 	
+	@GetMapping("/coffe/update")
+	public String update(@ModelAttribute CafeDto coffeDto, 
+			@RequestParam("id") int id)
+	{
+		coffeDto.setCoffeId(id);
+		cafeService.update(coffeDto);
+		
+		return "redirect:/coffe/view?id="+id;
+	}
+	
 	
 	
 	

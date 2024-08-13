@@ -24,4 +24,10 @@ public class GameController
 		
 		return "game/member/login";
 	}
+	
+	@GetMapping("/signUp")
+	public String gameSignUp(Model model)
+	{
+		return "game/member/register";
+	}
 }

@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	  layout:decorate="~{game/gameDefault}">
+	  layout:decorate="~{movie/default}">
 <head>
-	<title layout:fregment="title">게임톡톡</title>
+	<title layout:fragment="title"></title>
 	<th:block layout:fragment="css"></th:block>
 	<th:block layout:fragment="script"></th:block>
 </head>
-<body>
+
+	<div layout:fragment="main" id="main">
 	
-		
-		
-		<div id="main">
-		
-		</div>
-		
-		
-	
-</body>
+	</div>
+
 </html>

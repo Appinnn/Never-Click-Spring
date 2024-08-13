@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="layoutHeader" id="header">
+	<div id="nav">
+				<ul id="menuList">
+					<li> <a href="">PC 게임</a> </li>
+					<li> <a href="/game/mobile">모바일 게임</a> </li>
+					<li> <a href="">콘솔 게임</a> </li>
+					<li> <a href="">MadeByMe</a> </li>
+					<li> <a href="">불만 게임</a> </li>
+					
+				</ul>
+				<div id="userALogo">
+					<div class="userBox">
+						<span class="loginLink">
+							<a th:href="@{/game/login}">로그인</a>
+						</span>
+						<span class="userService">고객센터</span>
+					</div>
+					<div class="logo"></div>
+				</div>
+			</div>
+</div>
+</html>

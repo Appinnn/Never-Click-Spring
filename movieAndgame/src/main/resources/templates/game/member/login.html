@@ -1,37 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>게임 로그인</title>
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/css/default.css">
-<script src="/js/game.js"></script>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{game/gameDefault}">
+	  
+	  <title layout:grafment="title">게임 로그인</title>
 </head>
+				<!-- /game/Login.html -->
 <body>
 	<div id="wrap">
-		<div id="header">
-			<div id="nav">
-				<ul id="menuList">
-					<li> <a href="">상영 영화</a> </li>
-					<li> <a href="">개봉 예정 영화</a> </li>
-					<li> <a href="">시사회</a> </li>
-					<li> <a href="/game/review">생생후기</a> </li>
-					
-				</ul>
-				<div id="userALogo">
-					<div class="userBox">
-						<span class="loginLink">
-							<a th:href="@{/game/login}">로그인</a>
-						</span>
-						<span class="userService">고객센터</span>
-					</div>
-					<div class="logo"></div>
-				</div>
-			</div>
-		</div>
-		<!-- login.html -->
 		
-		<div id="main">
+		
+		
+		<div layout:fragment="main" id="main">
 			<form method="post" th:action="@{/game/signIn}" th:object="${gameMember}">
 				<div id="formData">
 					<div class="inputField"> 
@@ -44,13 +24,10 @@
 						<label th:for="password">비밀번호</label>
 					</div>
 					
-					<div class="inputField">
-						<input type="text" th:field="*{nickName}">
-						<label th:for="nickName">닉네임</label>
-					</div>
+					
 					
 					<div class="loginBt">
-						<button>LOGIN</button>
+						<button>로그인</button>
 					</div>
 				</div>
 			</form>
@@ -61,9 +38,7 @@
 			</div>
 		</div>
 		
-		<div id="footer">
 		
-		</div>
 	</div>
 </body>
 </html>

@@ -26,6 +26,14 @@ public class MovieController
 		
 		return "movie/member/login";
 	}
+	
+	// 회원가입 페이지 제공
+	@GetMapping("/signUp")
+	public String signUp(Model model)
+	{
+		model.addAttribute("movieMember",new MovieMember() );
+		return "movie/member/join";
+	}
 }
 
 

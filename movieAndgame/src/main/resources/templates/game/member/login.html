@@ -3,7 +3,7 @@
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorate="~{game/gameDefault}">
 	  
-	  <title layout:grafment="title">게임 로그인</title>
+	  <title layout:fragment="title">게임 로그인</title>
 </head>
 				<!-- /game/Login.html -->
 <body>
@@ -12,11 +12,12 @@
 		
 		
 		<div layout:fragment="main" id="main">
-			<form method="post" th:action="@{/game/signIn}" th:object="${gameMember}">
+			<form method="post" th:action="@{/game/signIn}" th:object="${gameDto}">
 				<div id="formData">
-					<div class="inputField"> 
+					<div class="inputField">						
 						<input type="text" th:field="*{email}">
-						<label th:for="email">아이디</label>
+						<label th:for="email">아이디</label> 
+						
 					</div>
 					
 					<div class="inputField">

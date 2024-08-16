@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{game/gameDefault}">
+<head>
+	<title layout:fragment="title">공략 정보 게시판</title>
+	<th:block layout:fragment="css"></th:block>
+	<th:block layout:fragment="script"></th:block>
+</head>
+
+	<div layout:fragment="main" id="main">
+		<div id="section_top">
+				<h3>지금 뜨는 게임 포스트</h3>
+				<p>
+					<a href="/gamePost/postWrite"> 게시글 작성 </a>
+				</p>
+			</div>
+			<div id="section_middle">
+				<table id="postList">
+				
+				</table>
+			</div>
+			<div id="section_bottom">
+				<div id="searchBox">
+				
+				</div>
+			</div>
+	</div>
+
+</html>

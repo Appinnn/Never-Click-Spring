@@ -1,5 +1,6 @@
 package com.movieAndgame.control;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,9 +50,39 @@ public class GameController
 			return "game/member/register";
 		}
 		
-		gameService.registerDataSave(gameDto);
+		boolean isDup = gameService.registerDataSave(gameDto);
+		if(isDup == true)
+		{
+			br.rejectValue("email", "error.email", "중복된 이메일이 있습니다.");
+			return "/game/member/register";
+		}
 		
 		return "game/member/login";
 	}
 	
+	@PostMapping("/signIn")
+	public String signIn(GameDto gameDto, HttpSession session, Model model)
+	{
+		GameDto user = gameService.login(gameDto);
+		if(user == null)
+		{
+			model.addAttribute("gameDto", gameDto);
+			model.addAttribute("fail", "a");
+			return "game/member/login";
+		}
+		session.setAttribute("user", user);
+		
+		return "redirect:/game/index";
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{game/gameDefault}">
+<head>
+	<title layout:fragment="title">포스트 작성</title>
+	<th:block layout:fragment="css"></th:block>
+	<th:block layout:fragment="script"></th:block>
+</head>
+
+	<div layout:fragment="main" id="main">
+		<h2>포스트 작성</h2>
+		<form method="get" action="gamePost/write" th:object="${gamePostDto}">
+			작성자 : <input type="text" th:field="*{writer}" readonly="readonly">
+				<p th:if="${#fields.hasErrors('writer')}" th:errors="*{writer}"></p>
+				
+				
+			제목 : <input type="text" th:field="*{title}"> <br>
+				<p th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+				
+				
+			모바일게임 이름 : <input type="text" th:field="*{gameName}"> <br>
+				<p th:if="${#fields.hasErrors('gameName')}" th:errors="*{gameName}"></p>
+				
+				
+			공략 내용 : <textarea th:field="*{targetPost}"> </textarea> <br>
+				<p th:if="${#fields.hasErrors('targetPost')}" th:errors="*{targetPost}"></p>
+				
+				
+			
+			<button>내용 등록</button>
+			
+		</form>
+	</div>
+
+</html>

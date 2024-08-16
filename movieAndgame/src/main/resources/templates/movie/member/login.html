@@ -3,7 +3,17 @@
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorate="~{movie/default}">
 <head>	  
-	<title layout:grafment="title">영화로그인</title>
+	<title layout:frgfment="title">영화로그인</title>
+	<th:block layout:fragment="script">
+		<script src="/js/movie_login.js"></script>
+		
+	</th:block>
+	
+	<th:block th:if="${fail}">
+		<script th:inline="javascript">
+			alert("아이디 또는 비밀번호를 잘못 입력하였습니다.");
+		</script>
+	</th:block>
 </head>
 	
 		<!-- login.html -->
